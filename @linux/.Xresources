@@ -1,0 +1,8 @@
+XTerm*metaSendsEscape: true
+XTerm*eightBitInput: false
+XTerm*fastScroll: true
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.autohint:  true
+Xft.hintstyle:  hintfull
