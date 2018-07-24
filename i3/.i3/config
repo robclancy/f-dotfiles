@@ -5,7 +5,7 @@
 # License: MIT
 # i3 config file (v4)
 
-killall -q polybar
+exec killall -q polybar
 
 # font for window titles and bar
 font pango:Source Sans Pro 14
