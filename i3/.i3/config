@@ -192,8 +192,9 @@ mode "  " {
     bindsym Up      resize shrink height 10 px or 10 ppt
     bindsym Right   resize grow width 10 px or 10 ppt
 
-    # back to normal: Enter or win+r
+    # back to normal: Enter, Escape or win+r
     bindsym Return mode "default"
+    bindsym Escape mode "default"
     bindsym $mod+r mode "default"
 }
 
@@ -252,35 +253,12 @@ for_window [class="Software-properties-gtk"]        floating enable
 # assign [class="Software-properties-gtk"]        → $ws10
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #2B83A6 #2B83A6 #FFFFFF #DDDDDD   #2B83A6
-client.focused_inactive #212121 #212121 #86888C #292D2E   #5A5A5A
-client.unfocused        #212121 #212121 #86888C #292D2E   #5A5A5A
-client.urgent           #D64E4E #D64E4E #FFFFFF #D64E4E   #D64E4E
-client.placeholder      #212121 #0C0C0C #FFFFFF #212121   #262626
-client.background       #212121
-
-# start i3bar to display a workspace bar
-bar {
-    status_command          i3blocks
-    bindsym button4         nop
-    bindsym button5         nop
-    position                bottom
-    tray_output             primary
-    separator_symbol        "·"
-    workspace_buttons       yes
-    strip_workspace_numbers yes
-
-    colors {
-        background  #212121
-        statusline  #DDDDDD
-        separator   #666666
-        # class             border  backgr. text
-        focused_workspace   #2B83A6 #2B83A6 #FFFFFF
-        active_workspace    #212121 #212121 #FFFFFF
-        inactive_workspace  #212121 #212121 #86888C
-        urgent_workspace    #D64E4E #D64E4E #FFFFFF
-    }
-}
+client.focused          #12121288 #12121288 #ffffff88 #2e9ef488
+client.focused_inactive #12121288 #12121288 #99999988 #484e5088
+client.unfocused        #12121255 #12121255 #88888855 #292d2e55
+client.urgent           #2f343a #900000 #ffffff #900000
+client.placeholder      #00000055 #0c0c0c55 #ffffff55 #00000055
+client.background color #000000
 
 # i3-gaps
 smart_gaps on
@@ -290,7 +268,7 @@ gaps outer 2
 # startup applications
 exec_always --no-startup-id ~/polybar.sh
 # exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro"
-# exec --no-startup-id nm-applet
-# exec --no-startup-id pulseaudio --start
+exec --no-startup-id nm-applet
+exec --no-startup-id pulseaudio --start
 # exec --no-startup-id feh --bg-fill ~/Public/desktop/dark-planet-minimalist.png
 # exec --no-startup-id "killall -q compton; compton --config ~/.config/compton/compton.conf
