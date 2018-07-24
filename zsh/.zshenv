@@ -1,8 +1,8 @@
 # .zshenv is always sourced, define here exported variables that should
 # be available to other programs.
 
-export VISUAL=subl
-export EDITOR=nano
+export VISUAL=cide
+export EDITOR=vim
 export PAGER=more
 export PATH=$PATH:~/bin:/usr/local/bin
 

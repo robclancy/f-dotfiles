@@ -16,11 +16,3 @@ dirwatch() {
 where() {
     find . -name \*$1\*
 }
-
-ssh() {
-	/usr/bin/ssh -t "$@" tmux new-session -A -s fabrice-session
-}
-
-psql_history() {
-    psql -U postgres -c "SELECT (pg_stat_file('base/'||oid ||'/PG_VERSION')).modification, datname FROM pg_database;"
-}
