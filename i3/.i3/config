@@ -5,8 +5,6 @@
 # License: MIT
 # i3 config file (v4)
 
-exec --no-startup-id ~/polybar.sh
-
 # font for window titles and bar
 font pango:Source Sans Pro 14
 
@@ -268,9 +266,10 @@ gaps inner 8
 gaps outer 2
 
 # startup applications
+exec --no-startup-id ~/polybar.sh
 # exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro"
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
-# exec --no-startup-id pa-applet
+exec --no-startup-id pa-applet
 # exec --no-startup-id feh --bg-fill ~/Public/desktop/dark-planet-minimalist.png
 # exec --no-startup-id "killall -q compton; compton --config ~/.config/compton/compton.conf
