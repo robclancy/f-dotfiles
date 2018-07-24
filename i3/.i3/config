@@ -5,7 +5,7 @@
 # License: MIT
 # i3 config file (v4)
 
-exec --no-startup-id ~/polybar.sh
+exec_always --no-startup-id ~/polybar.sh
 
 # font for window titles and bar
 font pango:Source Sans Pro 14
