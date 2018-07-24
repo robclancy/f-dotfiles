@@ -1,5 +1,7 @@
 TMOUT=60  # refresh prompt every minute (thus updating PS1 'hour' component)
 
+export EDITOR='vim'
+
 # Completion system
 autoload -U compinit
 compinit
