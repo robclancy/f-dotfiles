@@ -1,5 +1,5 @@
 typeset -U path
 
-path+=(`yarn bin`)
+path+=(`yarn global bin`)
 
 export PATH
