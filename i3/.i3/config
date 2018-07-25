@@ -14,7 +14,7 @@ font pango:Source Sans Pro 14
 set $mod Mod4
 
 # start a terminal
-bindsym $mod+Return exec dbus-launch mate-terminal
+bindsym $mod+Return exec dbus-launch gnome-terminal
 
 # use these keys for focus, movement, and resize directions
 set $left   j
@@ -201,6 +201,23 @@ mode "  " {
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+r mode "default"
+}
+
+# move workspaces to different monitors
+bindsym $mod+Shift+w mode "workspace"
+mode "workspace" {
+    # move left and right with j and semicolon
+    bindsym $left   move workspace to output left
+    bindsym $right  move workspace to output right
+
+    # same bindings, but for the arrow keys
+    bindsym Left    move workspace to output left
+    bindsym Right   move workspace to output right
+
+    # back to normal: Enter, Escape or win+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Shift+w mode "default"
 }
 
 # set specific windows to floating mode
