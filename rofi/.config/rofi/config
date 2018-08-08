@@ -1,0 +1,9 @@
+! Rofi config file
+rofi.lines: 15
+rofi.font: Source Sans Pro 13
+rofi.show-icons: true
+rofi.theme: ~/.config/rofi/oxide.rasi
+rofi.display-window: Window
+rofi.sort: true
+rofi.matching: fuzzy
+rofi.levenshtein-sort: false

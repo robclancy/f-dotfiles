@@ -13,6 +13,10 @@ antigen bundle common-aliases
 antigen bundle compleat
 antigen bundle git-extras
 
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities id_rsa t450s_id_rsa
+antigen bundle ssh-agent
+
 # zsh-users extras
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh

@@ -16,3 +16,27 @@ dirwatch() {
 where() {
     find . -name \*$1\*
 }
+
+project() {
+    cd "$HOME/projects/$@"
+}
+
+postedin() {
+    cd "$HOME/projects/postedin/$@"
+}
+
+work() {
+    i3-msg splith
+    dbus-launch gnome-terminal --working-directory="$HOME/projects/$@"
+    if [[ "$@" == "marketplace" || "$@" == "marketplace/" ]]; then
+        dbus-launch gnome-terminal --working-directory="$HOME/projects/$@/api"
+    else
+        dbus-launch gnome-terminal --working-directory="$HOME/projects/$@"
+    fi
+
+    dbus-launch gnome-terminal --working-directory="$HOME/projects/$@"
+
+    code "$HOME/projects/$@"
+    sleep 1
+    i3-msg "move up"
+}

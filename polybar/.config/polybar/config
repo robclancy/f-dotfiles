@@ -21,7 +21,7 @@ font-4 = Weather Icons:size=12;1
 
 modules-left = powermenu
 modules-center =  date-others
-modules-right = openweathermap-simple volume backlight wireless-network wired-network battery battery-1
+modules-right = openweathermap-simple volume wireless-network wired-network battery
 
 [bar/bottom]
 monitor = ${env:SCREEN}
@@ -139,7 +139,7 @@ animation-charging-framerate = 10000
 [module/cpu]
 type = internal/cpu
 interval = 0.5
-format = <label> <ramp-coreload>
+format = <label><ramp-coreload>
 label = CPU
 
 ramp-coreload-0 = ▁
@@ -210,10 +210,11 @@ label-separator-foreground = #ffb52a
 
 [module/memory]
 type = internal/memory
-format = <label> <bar-used>
-label = RAM
+format = RAM <bar-used><label>
+label = %{F#999}%gb_used%%{F-}
+label-font = 4
 
-bar-used-width = 30
+bar-used-width = 16
 bar-used-foreground-0 = #aaff77
 bar-used-foreground-1 = #aaff77
 bar-used-foreground-2 = #fba922
@@ -257,8 +258,9 @@ bar-used-empty-foreground = #444444
 [module/filesystem]
 type = internal/fs
 mount-0 = /
-format-mounted = /dev/sda1 <bar-used><label-mounted>
-label-mounted = %free%
+format-mounted = SSD  <bar-used><label-mounted>
+label-mounted = %{F#999}%free%%{F-}
+label-mounted-font = 4
 
 bar-used-width = 10
 bar-used-foreground-0 = #aaff77
@@ -324,17 +326,19 @@ animation-packetloss-framerate = 500
 
 [module/wired-network]
 type = internal/network
-interface = enp0s25
+interface = enp4s0
 interval = 3.0
 
 label-connected =    %local_ip%
 label-disconnected-foreground = #66
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 # speaker-mixer = Speaker
 # headphone-mixer = Headphone
 # headphone-id = 9
+
+mapped = true
 
 format-volume = <ramp-volume> <bar-volume> <label-volume>
 label-muted =   muted
