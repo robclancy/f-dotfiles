@@ -8,7 +8,8 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch
 SCREEN=eDP-1-1 polybar top &
-SCREEN=eDP-1-1 polybar bottom &
+TRAY=right SCREEN=eDP-1-1 polybar bottom &
+#SCREEN=eDP-1-1 polybar bottom &
 SCREEN=HDMI-1-1 polybar top &
 TRAY=right SCREEN=HDMI-1-1 polybar bottom &
 SCREEN=DP-1-1 polybar top &

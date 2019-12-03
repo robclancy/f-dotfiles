@@ -34,3 +34,4 @@ setopt NO_CASE_GLOB     # Case insensitive globbing
 setopt NO_LIST_BEEP
 
 DISABLE_UNTRACKED_FILES_DIRTY="true" # makes repository status check for large repositories much faster
+

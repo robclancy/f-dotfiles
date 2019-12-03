@@ -1,3 +1,8 @@
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  source /etc/profile.d/vte.sh
+fi
+
 # files to source in priority
 source /usr/share/zsh/share/antigen.zsh
 
@@ -28,6 +33,12 @@ antigen bundle sindresorhus/pure
 
 # Antigen done
 antigen apply
+
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+#source /bin/virtualenvwrapper.sh
+
+export IDEA_JDK=/usr/lib/jvm/java-8-openjdk-jetbrains
+export PHPSTORM_JDK=/usr/lib/jvm/java-8-openjdk-jetbrains
 
 # load zsh config files
 config_files=(~/.zsh/**/*.zsh(N))

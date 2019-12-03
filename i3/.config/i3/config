@@ -5,6 +5,8 @@
 # License: MIT
 # i3 config file (v4)
 
+exec --no-startup-id compton -CG --config ~/.config/compton/compton.conf
+
 exec_always --no-startup-id ~/polybar.sh
 
 # font for window titles and bar
@@ -14,7 +16,8 @@ font pango:Source Sans Pro 14
 set $mod Mod4
 
 # start a terminal
-bindsym $mod+Return exec dbus-launch gnome-terminal
+#bindsym $mod+Return exec dbus-launch gnome-terminal
+bindsym $mod+Return exec dbus-launch kitty
 
 # use these keys for focus, movement, and resize directions
 set $left   j
@@ -53,7 +56,7 @@ popup_during_fullscreen smart
 # start a program launcher
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF'"
 # bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+d exec --no-startup-id ~/.i3/run-rofi.sh
+bindsym $mod+d exec --no-startup-id ~/.config/i3/run-rofi.sh
 
 # switching window with win+tab
 bindsym $mod+Tab exec --no-startup-id rofi -show window
@@ -222,7 +225,6 @@ mode "workspace" {
 }
 
 # set specific windows to floating mode
-for_window [window_role="app"]                      floating enable
 for_window [window_role="pop-up"]                   floating enable
 for_window [window_role="task_dialog"]              floating enable
 for_window [title="Preferences$"]                   floating enable
@@ -234,6 +236,12 @@ for_window [class="Lightdm-gtk-greeter-settings"]   floating enable
 for_window [class="Lxappearance"]                   floating enable
 for_window [class="Menu"]                           floating enable
 for_window [class="Software-properties-gtk"]        floating enable
+# for_window [class="crx_ipfcgkknodfjmlmeidpmjnajfcckogjc" window_role="pop-up"] floating disable
+for_window [class="Google-chrome-beta" window_role="pop-up"] floating disable
+for_window [class="deepin-.*"] floating enable
+for_window [class="Deepin-.*"] floating enable
+for_window [class="dde-.*"] floating enable
+for_window [window_role="GtkFileChooserDialog"] floating enable
 
 # assign program to workspace
 # assign [class="Alacritty"]          → $ws1
@@ -293,5 +301,5 @@ exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id pa-applet
-# exec --no-startup-id feh --bg-fill ~/Public/desktop/dark-planet-minimalist.png
+exec --no-startup-id feh --bg-scale ~/projects/robclancy/f-dotfiles/background.jpg
 # exec --no-startup-id "killall -q compton; compton --config ~/.config/compton/compton.conf

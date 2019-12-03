@@ -27,8 +27,8 @@ postedin() {
 
 work() {
     i3-msg splith
-    dbus-launch gnome-terminal --working-directory="$HOME/projects/$@"
-    if [[ "$@" == "marketplace" || "$@" == "marketplace/" ]]; then
+    cd "$HOME/projects/$@"
+    if [[ "$@" == "postedin/marketplace" || "$@" == "postedin/marketplace/" ]]; then
         dbus-launch gnome-terminal --working-directory="$HOME/projects/$@/api"
     else
         dbus-launch gnome-terminal --working-directory="$HOME/projects/$@"
