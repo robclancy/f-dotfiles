@@ -25,11 +25,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   let NERDTreeDirArrows = 1
 
   " Working with code
-  Plug 'jiangmiao/auto-pairs'
-  let g:AutoPairsFlyMode = 1
-  " M-b jumps back
-  let g:AutoPairsShortcutJump = ''
-  let g:AutoPairsShortcutFastWrap = ''
 
   " Plug 'terryma/vim-multiple-cursors'
   " let g:multi_cursor_use_default_mapping=0
@@ -56,6 +51,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'vim-airline/vim-airline'
   let g:airline_powerline_fonts = 1
+  let g:airline_left_sep=''
+  let g:airline_right_sep=''
 
   if !exists('g:airline_symbols')
     let g:airline_symbols = {}
